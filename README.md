@@ -1,4 +1,4 @@
-# 📊 Modelo Apriori para Movimientos Contables
+# 📊 Modelo Apriori para movimientos contables
 
 Este repositorio contiene un script desarrollado en **R** para generar **reglas de asociación** a partir de movimientos contables, utilizando el algoritmo **Apriori** disponible en el paquete `arules`.
 
@@ -19,7 +19,7 @@ El proceso incluye:
 
 ---
 
-## 📌 Requisitos de Instalación
+## 📌 Requisitos de instalación
 
 - **R versión 4.0** o superior.
 - Paquetes necesarios:
@@ -30,7 +30,7 @@ install.packages(c("arules", "arulesViz", "dplyr", "readr", "stringr", "forcats"
 
 ---
 
-## 🛠 Parámetros Personalizables
+## 🛠 Parámetros personalizables
 
 Puedes configurar estos parámetros al inicio del script:
 
@@ -52,7 +52,7 @@ relevant_rules <- list(
 
 ---
 
-## 📁 Formato de Salida
+## 📁 Formato de salida
 
 El resultado es exportado automáticamente a un archivo CSV en la misma carpeta del archivo de entrada, nombrado según el patrón:
 
@@ -72,7 +72,7 @@ Para visualizar adecuadamente en Excel, usa la opción **"Texto en columnas"** c
 
 ---
 
-## 🛑 Manejo de Errores
+## 🛑 Manejo de errores
 
 El script incluye manejo de errores, proporcionando mensajes claros y detallados sobre en qué etapa se produjo la falla.
 
