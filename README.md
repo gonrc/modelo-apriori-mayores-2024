@@ -2,7 +2,7 @@
 
 ## 📋 Descripción
 
-Este repositorio contiene un script en R diseñado para generar **reglas de asociación** a partir de movimientos contables utilizando el algoritmo **Apriori** del paquete `arules`. El script está optimizado para organizaciones que registran transacciones categóricas (proveedor, usuario, actividad, cuenta contable, etc.).
+Este repositorio contiene un script en R que genera **reglas de asociación** a partir de movimientos contables utilizando el algoritmo **Apriori** del paquete `arules`. El script está pensado para organizaciones que registran transacciones categóricas (proveedor, usuario, actividad, cuenta contable, etc.).
 
 El script incluye:
 
@@ -51,7 +51,7 @@ Es recomendable abrir este archivo en Excel usando la opción **"Texto en column
 
 ## 🛑 Manejo de errores
 
-El script cuenta con un manejo de errores que identifica claramente el paso en el cual ocurrió una falla y proporciona mensajes detallados.
+El script cuenta con un manejo de errores que identifica el paso en el cual ocurrió una falla y proporciona mensajes detallados.
 
 ---
 
