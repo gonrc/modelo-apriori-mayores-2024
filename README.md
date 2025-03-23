@@ -1,62 +1,85 @@
-# Modelo Apriori para movimientos contables
+# 📊 Modelo Apriori para Movimientos Contables
 
-## 📋 Descripción
+Este repositorio contiene un script desarrollado en **R** para generar **reglas de asociación** a partir de movimientos contables, utilizando el algoritmo **Apriori** disponible en el paquete `arules`.
 
-Este repositorio contiene un script en R que genera **reglas de asociación** a partir de movimientos contables utilizando el algoritmo **Apriori** del paquete `arules`. El script está pensado para organizaciones que registran transacciones categóricas (proveedor, usuario, actividad, cuenta contable, etc.).
+---
 
-El script incluye:
+## ⚙️ Funcionalidades
 
-- Limpieza de datos (eliminación de valores vacíos y ceros)
-- Conversión automática de columnas a factores
-- Transformación del dataset a formato `transactions`
-- Ejecución del algoritmo Apriori con soporte relativo
-- Filtrado de reglas redundantes
-- Selección de reglas relevantes según parámetros configurables
-- Exportación automática a CSV separado por `|` con timestamp
-- Control y reporte detallado de errores
+El proceso incluye:
 
-## 🛠 Requisitos
+- Limpieza automática del dataset (eliminación de valores vacíos y ceros).
+- Conversión automática de todas las columnas a factores.
+- Transformación del dataset al formato `transactions` necesario para Apriori.
+- Ejecución del algoritmo Apriori con soporte relativo calculado dinámicamente.
+- Filtrado automático de reglas redundantes.
+- Extracción personalizada de reglas relevantes según configuración previa.
+- Exportación automática de resultados en formato CSV (`|` como separador) incluyendo un timestamp.
+- Gestión y reporte detallado de errores.
 
-- R 4.0 o superior
-- Paquetes: `arules`, `arulesViz`, `dplyr`, `readr`, `stringr`, `forcats`
+---
 
-Instalación recomendada:
+## 📌 Requisitos de Instalación
+
+- **R versión 4.0** o superior.
+- Paquetes necesarios:
 
 ```r
 install.packages(c("arules", "arulesViz", "dplyr", "readr", "stringr", "forcats"))
 ```
 
-## ⚙️ Parámetros personalizables
+---
 
-Al inicio del script se puede configurar:
+## 🛠 Parámetros Personalizables
 
-- `input_file_name`: Nombre del archivo CSV de entrada.
-- `input_folder`: Path donde se encuentra el archivo de entrada.
-- `min_support_abs`: Soporte absoluto mínimo (cantidad mínima de transacciones).
-- `min_conf`: Confianza mínima requerida para las reglas.
-- `min_rule_length`: Longitud mínima que deben tener las reglas.
-- `relevant_rules`: Lista con reglas específicas que deseas extraer (campos a predecir y campos excluidos).
+Puedes configurar estos parámetros al inicio del script:
 
-## 📤 Salida
+- **`input_file_name`**: Nombre del archivo CSV de entrada.
+- **`input_folder`**: Ruta al directorio que contiene el archivo.
+- **`min_support_abs`**: Soporte absoluto mínimo requerido.
+- **`min_conf`**: Confianza mínima para considerar una regla válida.
+- **`min_rule_length`**: Longitud mínima de las reglas generadas.
+- **`relevant_rules`**: Especifica reglas a extraer con campos a predecir y campos que deseas excluir del antecedente.
 
-Genera un archivo CSV separado por `|` en la misma carpeta que el archivo de entrada. El nombre del archivo incluye un timestamp en el formato `yy-mm-dd--HH_MM_SS`. Contiene:
+Ejemplo:
 
-- `lhs`: Antecedente de la regla
-- `rhs`: Consecuente de la regla
-- `confidence`: Confianza de la regla (redondeado a 4 decimales)
-- `lift`: Métrica de independencia (redondeado a 4 decimales)
-- `count`: Número absoluto de transacciones que respaldan la regla
+```r
+relevant_rules <- list(
+  list(predicts = "cuenta_contable", exclude_from_lhs = "actividad"),
+  list(predicts = "actividad", exclude_from_lhs = "cuenta_contable")
+)
+```
 
-Es recomendable abrir este archivo en Excel usando la opción **"Texto en columnas"** con el separador `|`.
+---
 
-## 🛑 Manejo de errores
+## 📁 Formato de Salida
 
-El script cuenta con un manejo de errores que identifica el paso en el cual ocurrió una falla y proporciona mensajes detallados.
+El resultado es exportado automáticamente a un archivo CSV en la misma carpeta del archivo de entrada, nombrado según el patrón:
+
+```
+reglas_asoc_filtradas_yy-mm-dd--HH_MM_SS.csv
+```
+
+El archivo contiene:
+
+- **`lhs`**: Antecedente de la regla.
+- **`rhs`**: Consecuente de la regla.
+- **`confidence`**: Confianza de la regla (4 decimales).
+- **`lift`**: Métrica de independencia (4 decimales).
+- **`count`**: Cantidad absoluta de transacciones que soportan la regla.
+
+Para visualizar adecuadamente en Excel, usa la opción **"Texto en columnas"** con separador `|`.
+
+---
+
+## 🛑 Manejo de Errores
+
+El script incluye manejo de errores, proporcionando mensajes claros y detallados sobre en qué etapa se produjo la falla.
 
 ---
 
 ## 👤 Autor
 
 [Gonzalo Ruiz Camauer](https://github.com/gonrc/)  
-✉️ Contacto: recipes_ficus_0s@icloud.com
+✉️ [recipes_ficus_0s@icloud.com](mailto:recipes_ficus_0s@icloud.com)
 
