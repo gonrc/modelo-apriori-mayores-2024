@@ -34,14 +34,14 @@ install.packages(c("arules", "arulesViz", "dplyr", "readr", "stringr", "forcats"
 
 ## 🛠 Parámetros personalizables
 
-Puedes configurar estos parámetros al inicio del script:
+Se pueden configurar estos parámetros al inicio del script:
 
 - **`input_file_name`**: Nombre del archivo CSV de entrada.
 - **`input_folder`**: Ruta al directorio que contiene el archivo.
 - **`min_support_abs`**: Soporte absoluto mínimo requerido.
 - **`min_conf`**: Confianza mínima para considerar una regla válida.
 - **`min_rule_length`**: Longitud mínima de las reglas generadas.
-- **`relevant_rules`**: Especifica reglas a extraer con campos a predecir y campos que deseas excluir del antecedente.
+- **`relevant_rules`**: Especifica reglas a extraer con campos a predecir y campos a excluir del antecedente.
 
 Ejemplo:
 
