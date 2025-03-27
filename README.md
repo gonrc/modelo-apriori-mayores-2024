@@ -1,8 +1,8 @@
 # 📊 Modelo Apriori para movimientos contables
 
-Este repositorio contiene un script desarrollado en **R** que aplica técnicas de **Machine Learning no supervisado** para descubrir reglas de asociación en movimientos contables categóricos, empleando el algoritmo **Apriori** del paquete `arules`.
+Este repositorio contiene un script desarrollado en **R** que aplica técnicas de **Machine Learning no supervisado** para descubrir reglas de asociación en transacciones contables categóricas, empleando el algoritmo **Apriori** del paquete `arules`.
 
-El objetivo principal de este proyecto es automatizar la clasificación de movimientos contables categóricos mediante reglas de asociación generadas a partir del análisis de transacciones previamente clasificadas de forma manual. Las reglas obtenidas podrán ser implementadas posteriormente en un algoritmo de clasificación automática aplicado a futuros movimientos contables, disminuyendo significativamente la necesidad de intervención manual y optimizando el tiempo dedicado al proceso.
+El objetivo principal de este proyecto es automatizar la clasificación de transacciones contables categóricas mediante reglas de asociación generadas a partir del análisis de transacciones previamente clasificadas de forma manual. Las reglas obtenidas podrán ser implementadas posteriormente en un algoritmo de clasificación automática aplicado a futuros movimientos contables, disminuyendo significativamente la necesidad de intervención manual y optimizando el tiempo dedicado al proceso.
 
 ---
 
